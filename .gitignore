@@ -23,4 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
-public/
+public/backup-repo.git
+backup-repo.git.bfg-report

@@ -1,0 +1,27 @@
+/* --- Mobile Styles (Default: Screen size < 768px) --- */
+
+/* Hide the Desktop Navigation by default on small screens */
+.desktop-nav {
+    display: none;
+  }
+  
+  /* Show the Mobile Toggle (Hamburger/X button) by default on small screens */
+  .mobile-toggle {
+    display: flex;
+  }
+  
+  /* --- Desktop Styles (Screen size >= 768px) --- */
+  
+  /* Standard Tailwind 'md' breakpoint is 768px */
+  @media (min-width: 768px) {
+    /* Show the Desktop Navigation on large screens */
+    .desktop-nav {
+      /* Set to flex to display links horizontally and override 'display: none' */
+      display: flex !important; 
+    }
+  
+    /* Hide the Mobile Toggle (Hamburger/X button) on large screens */
+    .mobile-toggle {
+      display: none !important; 
+    }
+  }

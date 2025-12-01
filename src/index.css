@@ -1,0 +1,35 @@
+
+
+@font-face {
+  font-family: Helvetica, sans-serif;
+  src: url("../src/assets/fonts/Helvetica\ Neue\ Medium\ Extended.ttf");
+}
+
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-helvetica: "Helvetica Neue", "sans-serif";
+  --font-body: "Open Sans", "sans-serif";
+
+  /* Colors */
+  --color-primary: #D6C3B1;        /* Oatmeal */
+  --color-secondary: #1A1A1A;      /* Deep Charcoal */
+  --color-accent-warm: #EAE7E0;    /* Warm Light Beige */
+  --color-accent-light: #ECEDED;   /* Light Gray */
+  --color-white: #ffffff;          /* White */
+
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* Easing */
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+
+}
+
+

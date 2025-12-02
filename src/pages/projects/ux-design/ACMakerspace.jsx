@@ -343,7 +343,7 @@ export default function ACMakerspace() {
               className="block"
             >
               <img
-                src="/images/ac-makerspace/ia-banner.jpg"
+                src="/images/ac-makerspace/ia-banner.jpeg"
                 alt="Information architecture banner"
                 className="w-full h-40 object-cover rounded-lg shadow"
               />
@@ -356,7 +356,7 @@ export default function ACMakerspace() {
               className="block"
             >
               <img
-                src="/images/ac-makerspace/userflow-banner.jpg"
+                src="/images/ac-makerspace/userflow-banner.jpeg"
                 alt="User flow banner"
                 className="w-full h-40 object-cover rounded-lg shadow"
               />
@@ -368,11 +368,6 @@ export default function ACMakerspace() {
               rel="noopener noreferrer"
               className="block"
             >
-              <img
-                src="/images/ac-makerspace/lofi-banner.jpg"
-                alt="Lo-fi wireframes"
-                className="w-full h-40 object-cover rounded-lg shadow"
-              />
             </a>
           </div>
         </motion.section>
@@ -396,12 +391,12 @@ export default function ACMakerspace() {
 
           <div className="grid md:grid-cols-2 gap-6">
             <img
-              src="/images/ac-makerspace/lofi-banner.jpg"
+              src="/images/ac-makerspace/lofi-banner.jpeg"
               alt="Lo-fi"
               className="w-full h-56 object-cover rounded-lg shadow"
             />
             <img
-              src="/images/ac-makerspace/hifi-banner.jpg"
+              src="/images/ac-makerspace/hifi-banner.jpeg"
               alt="Hi-fi"
               className="w-full h-56 object-cover rounded-lg shadow"
             />

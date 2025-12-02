@@ -35,13 +35,13 @@ const featuredProjects = [
   {
     title: "Algonquin Makerspace Project",
     tag: "UX Design",
-    image: "/images/project-banners/ac-makerspace-banner-resized.jpg",
+    image: "/images/project-banners/ac-makerspace-banner-resized.jpeg",
     link: "/projects/ux-design/ac-makerspace"
   },
   {
     title: "Photo & Video Stories",
     tag: "Photo & Videography",
-    image: "/images/project-banners/photo-video-banner-resized.jpg",
+    image: "/images/project-banners/photo-video-banner-resized.jpeg",
     link: "/projects/photo-video"
   },
   {

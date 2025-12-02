@@ -31,7 +31,7 @@ export default function ACMakerspace() {
           className="relative rounded-xl overflow-hidden shadow-2xl"
         >
           <img
-            src="/images/project-banners/ac-makerspace-banner.jpg"
+            src="/images/project-banners/ac-makerspace-banner-resized.jpeg"
             alt="AC Makerspace Hero"
             className="w-full h-64 md:h-[420px] object-cover"
           />
@@ -222,17 +222,17 @@ export default function ACMakerspace() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
             <img
-              src="/images/ac-makerspace/ingenium-competitor-logo.jpg"
+              src="/images/ac-makerspace/ingenium.jpeg"
               alt="Ingenium"
               className="h-20 object-contain"
             />
             <img
-              src="/images/ac-makerspace/canada-meseum-natute-competitor-logo.png"
+              src="/images/ac-makerspace/canada-meseum-natute.jpeg"
               alt="Nature"
               className="h-20 object-contain"
             />
             <img
-              src="/images/ac-makerspace/canada-meseum-history-competitor-logo.png"
+              src="/images/ac-makerspace/canada-meseum-history.jpeg"
               alt="History"
               className="h-20 object-contain"
             />
@@ -268,7 +268,7 @@ export default function ACMakerspace() {
                 whileHover={{ scale: 1.02 }}
               >
                 <img
-                  src="/images/ac-makerspace/personas/persona-1.jpg"
+                  src="/images/ac-makerspace/personas/persona-1.jpeg"
                   alt="Mary Thompson"
                   className="w-full h-48 object-cover rounded-lg mb-3"
                 />
@@ -286,7 +286,7 @@ export default function ACMakerspace() {
                 whileHover={{ scale: 1.02 }}
               >
                 <img
-                  src="/images/ac-makerspace/personas/persona-2.jpg"
+                  src="/images/ac-makerspace/personas/persona-2.jpeg"
                   alt="Alex Gallo"
                   className="w-full h-48 object-cover rounded-lg mb-3"
                 />
@@ -304,7 +304,7 @@ export default function ACMakerspace() {
                 whileHover={{ scale: 1.02 }}
               >
                 <img
-                  src="/images/ac-makerspace/personas/persona-3.jpg"
+                  src="/images/ac-makerspace/personas/persona-3.jpeg"
                   alt="Sofia Ramirez"
                   className="w-full h-48 object-cover rounded-lg mb-3"
                 />

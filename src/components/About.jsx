@@ -70,7 +70,7 @@ export default function AboutMe() {
             className="md:w-1/2 md:h-full"
           >
             <img
-              src="/images/satellite-headshot.png"
+              src="/images/satellite-headshot-resized.jpeg"
               alt="Satellite Nongmaithem"
               className="md:w-full md:h-full object-cover rounded-3xl shadow-xl"
             />

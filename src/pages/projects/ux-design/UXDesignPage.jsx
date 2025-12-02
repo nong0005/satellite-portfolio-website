@@ -7,13 +7,13 @@ const uxProjects = [
   {
     title: "Algonquin College Makerspace Project",
     path: "/projects/ux-design/ac-makerspace",
-    image: "/images/project-banners/ac-makerspace-banner.jpg",
+    image: "/images/project-banners/ac-makerspace-banner-resized.jpg",
     description: "UX workflow + immersive environment design for AC Makerspace.",
   },
   {
     title: "Tailgators Website Redesign",
     path: "/projects/ux-design/tailgators",
-    image: "/images/project-banners/tailgators-banner.png",
+    image: "/images/project-banners/tailgators-banner-resized.jpeg",
     description: "A fresh redesigned website improving clarity & navigation.",
   },
 ];

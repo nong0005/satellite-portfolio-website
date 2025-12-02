@@ -29,25 +29,25 @@ const featuredProjects = [
   {
     title: "Tailgators Website Redesign",
     tag: "UX Design",
-    image: "/images/project-banners/tailgators-banner.png",
+    image: "/images/project-banners/tailgators-banner-resized.jpeg",
     link: "/projects/ux-design/tailgators"
   },
   {
     title: "Algonquin Makerspace Project",
     tag: "UX Design",
-    image: "/images/project-banners/ac-makerspace-banner.jpg",
+    image: "/images/project-banners/ac-makerspace-banner-resized.jpg",
     link: "/projects/ux-design/ac-makerspace"
   },
   {
     title: "Photo & Video Stories",
     tag: "Photo & Videography",
-    image: "/images/project-banners/photo-video-banner.jpg",
+    image: "/images/project-banners/photo-video-banner-resized.jpg",
     link: "/projects/photo-video"
   },
   {
     title: "Digital Graphics Showcase",
     tag: "Digital Graphics",
-    image: "/images/project-banners/digital-design-banner.png",
+    image: "/images/project-banners/digital-design-banner-resized.jpeg",
     link: "/projects/digital-design"
   }
 ];

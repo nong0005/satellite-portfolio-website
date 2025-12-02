@@ -7,7 +7,7 @@ const uxProjects = [
   {
     title: "Algonquin College Makerspace Project",
     path: "/projects/ux-design/ac-makerspace",
-    image: "/images/project-banners/ac-makerspace-banner-resized.jpg",
+    image: "/images/project-banners/ac-makerspace-banner-resized.jpeg",
     description: "UX workflow + immersive environment design for AC Makerspace.",
   },
   {

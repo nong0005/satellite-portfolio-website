@@ -51,7 +51,7 @@ const ContactPage = () => {
             <div className="contact-card text-[var(--color-secondary)] flex flex-col items-center md:items-start gap-6">
 
               <img
-                src="/images/satellite-headshot.png"
+                src="/images/satellite-headshot-resized.jpeg"
                 alt="Satellite"
                 className="contact-profile-img"
               />

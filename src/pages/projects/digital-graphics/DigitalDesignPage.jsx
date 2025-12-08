@@ -12,19 +12,19 @@ const digitalProjects = [
   },
   {
     title: "Immersive Lab Guidebook",
-    image: "/images/digital-design/immersive-handbook-banner.jpg",
+    image: "/images/digital-design/immersive-handbook-banner.jpeg",
     link: "https://drive.google.com/file/d/1Ev5XZF8ILEmexc1aJG9RPgfyHBu4mSnh/view?usp=drive_link",
     description: "A clean guidebook created for the new immersive lab at Algonquin College."
   },
   {
     title: "Course Progression Flow Chart",
-    image: "/images/digital-design/progression-chart-banner.jpg",
+    image: "/images/digital-design/progression-chart-banner.jpeg",
     link: "https://drive.google.com/file/d/17Gt4lOc4GbK0x31gzdxcZjahh5JRP4pD/view?usp=drive_link",
     description: "A detailed course progression flow chart created for student academic guidance."
   },
   {
     title: "Movie Poster Design",
-    image: "/images/digital-design/movie-poster-banner.jpg",
+    image: "/images/digital-design/movie-poster-banner.jpeg",
     link: "https://drive.google.com/file/d/1gD1DGBdVdDiK364PvhQfu1CaXckVW-lE/view?usp=drive_link",
     description: "A custom conceptual movie poster created as a digital graphics project."
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import ContactForm from "../components/ContactForm";
 import AnimatedGradient from "../components/AnimatedGradient";
 import "../styles/contact.css";
@@ -15,8 +16,12 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--color-white)] py-16">
-
+    <motion.div
+      className="min-h-screen bg-[var(--color-white)] py-16"
+      initial={{ opacity: 0, y: 30 }} // start slightly below and invisible
+      animate={{ opacity: 1, y: 0 }}  // animate to visible at original position
+      transition={{ duration: 0.6, ease: "easeInOut" }} // smooth animation
+    >
       {/* Page Title */}
       <h1 className="contact-page-title">Contact Me</h1>
 
@@ -28,11 +33,14 @@ const ContactPage = () => {
 
           {/* LEFT: Contact Form */}
           <AnimatedGradient className="contact-gradient">
-            <div className="contact-card">
-
+            <motion.div
+              className="contact-card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: "easeInOut" }}
+            >
               <h2
-                className="text-4xl sm:text-5xl font-extrabold mb-4 text-[var(--color-secondary)] 
-                text-center md:text-left"
+                className="text-4xl sm:text-5xl font-extrabold mb-4 text-[var(--color-secondary)] text-center md:text-left"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Let’s create something amazing together
@@ -43,13 +51,17 @@ const ContactPage = () => {
               </p>
 
               <ContactForm />
-            </div>
+            </motion.div>
           </AnimatedGradient>
 
           {/* RIGHT: Profile Section */}
           <AnimatedGradient className="contact-gradient">
-            <div className="contact-card text-[var(--color-secondary)] flex flex-col items-center md:items-start gap-6">
-
+            <motion.div
+              className="contact-card text-[var(--color-secondary)] flex flex-col items-center md:items-start gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
+            >
               <img
                 src="/images/satellite-headshot-resized.jpeg"
                 alt="Satellite"
@@ -59,7 +71,6 @@ const ContactPage = () => {
               <div className="w-16 h-1 bg-[var(--color-secondary)] rounded-full"></div>
 
               <div className="flex flex-col gap-4 w-full items-center md:items-start text-center md:text-left">
-
                 <a
                   href="mailto:nong0005@algonquinlive.com"
                   className="btn-secondary w-full sm:w-auto px-4 py-2 break-words whitespace-normal"
@@ -81,14 +92,13 @@ const ContactPage = () => {
                 <div>
                   <span className="font-bold">Local Time:</span> {getLocalTime()} EST
                 </div>
-
               </div>
-            </div>
+            </motion.div>
           </AnimatedGradient>
 
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

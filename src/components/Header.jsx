@@ -117,7 +117,7 @@ const Header = () => {
                   )
                 ))}
 
-            <Link to="/contact" className="btn-primary">
+            <Link to="/contact" onClick={closeMenu} className="btn-primary">
               Contact Me
             </Link>
               </motion.div>

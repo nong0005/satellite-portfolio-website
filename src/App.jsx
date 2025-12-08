@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Layout from "./components/Layout";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Main pages
 import Home from "./pages/Home";
@@ -28,35 +29,40 @@ import PhotoVideoPage from "./pages/projects/photo-video/PhotoVideoPage";
 
 function App() {
   return (
-    <Routes>
-      {/* Layout wrapper */}
-      <Route element={<Layout />}>
-        {/* Home shows first */}
-        <Route path="/" element={<Home />} />
+    <>
+      {/* Scroll to top on route change */}
+      <ScrollToTop />
 
-        {/* Main */}
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+      <Routes>
+        {/* Layout wrapper */}
+        <Route element={<Layout />}>
+          {/* Home */}
+          <Route path="/" element={<Home />} />
 
-        {/* UX */}
-        <Route path="/projects/ux-design" element={<UXDesignPage />} />
-        <Route path="/projects/ux-design/ac-makerspace" element={<ACMakerspace />} />
-        <Route path="/projects/ux-design/tailgators" element={<TailgatorsPage />} />
-        <Route path="/projects/ux-design/outlook-demo" element={<OutlookDemoPage />} />
+          {/* Main */}
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
 
-        {/* Web Dev */}
-        <Route path="/projects/web-development" element={<WebDevelopmentPage />} />
-        <Route path="/projects/web-development/soes-app" element={<SoesAppPage />} />
-        <Route path="/projects/web-development/soes-website" element={<SoesWebsitePage />} />
+          {/* UX */}
+          <Route path="/projects/ux-design" element={<UXDesignPage />} />
+          <Route path="/projects/ux-design/ac-makerspace" element={<ACMakerspace />} />
+          <Route path="/projects/ux-design/tailgators" element={<TailgatorsPage />} />
+          <Route path="/projects/ux-design/outlook-demo" element={<OutlookDemoPage />} />
 
-        {/* Digital */}
-        <Route path="/projects/digital-design" element={<DigitalDesignPage />} />
+          {/* Web Dev */}
+          <Route path="/projects/web-development" element={<WebDevelopmentPage />} />
+          <Route path="/projects/web-development/soes-app" element={<SoesAppPage />} />
+          <Route path="/projects/web-development/soes-website" element={<SoesWebsitePage />} />
 
-        {/* Photo/Video */}
-        <Route path="/projects/photo-video" element={<PhotoVideoPage />} />
-      </Route>
-    </Routes>
+          {/* Digital */}
+          <Route path="/projects/digital-design" element={<DigitalDesignPage />} />
+
+          {/* Photo/Video */}
+          <Route path="/projects/photo-video" element={<PhotoVideoPage />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

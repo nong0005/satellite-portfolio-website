@@ -1,55 +1,83 @@
 /* Outer page container */
 .contact-page-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem; /* equal left-right padding */
-  }
-  
-  /* Main grid wrapper */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem; /* equal left-right padding */
+}
+
+/* Main grid wrapper */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr; /* default single column for mobile */
+  gap: 40px;
+  width: 100%;
+}
+
+/* Desktop: 60/40 split */
+@media (min-width: 768px) {
   .contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    width: 100%;
+    grid-template-columns: 55% 45%;
+    justify-content: center; /* center the grid */
   }
-  
-  /* Desktop: 70/30 split */
-  @media (min-width: 768px) {
-    .contact-wrapper {
-      grid-template-columns: 70% 30%;
-      justify-content: center; /* center the grid */
-    }
-  }
-  
-  /* Gradient wrapper */
-  .contact-gradient {
-    width: 100%;
-    display: block !important;
-  }
-  
-  /* Inner card to fill section and have consistent padding */
-  .contact-card {
-    width: 100%;
-    height: 100%;
-    padding: 2rem; /* same padding left-right */
-    box-sizing: border-box;
-  }
-  
-  /* Profile image */
-  .contact-profile-img {
-    width: 130px;
-    height: 130px;
-    border-radius: 9999px;
-    object-fit: cover;
-    border: 4px solid var(--color-primary);
-  }
-  
-  /* Page title styling */
-  .contact-page-title {
-    font-size: 2.5rem;
-    font-weight: 800;
+}
+
+/* Gradient wrapper */
+.contact-gradient {
+  width: 100%;
+  display: block !important;
+}
+
+/* Inner card to fill section and have consistent padding */
+.contact-card {
+  width: 100%;
+  height: 100%;
+  padding: 2rem; /* consistent padding */
+  box-sizing: border-box;
+}
+
+/* Profile image */
+.contact-profile-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 4px solid var(--color-primary);
+}
+
+/* Page title styling */
+.contact-page-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--color-secondary);
+  margin-bottom: 2rem;
+  font-family: var(--font-heading);
+}
+
+/* Ensure profile section content aligns nicely on desktop */
+@media (min-width: 768px) {
+  .contact-wrapper > .contact-gradient:last-child .contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    color: var(--color-secondary);
-    margin-bottom: 2rem;
-    font-family: var(--font-heading);
   }
+
+  /* Left align on larger screens if needed */
+  .contact-wrapper > .contact-gradient:last-child .contact-card > div {
+    text-align: center;
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+  }
+}

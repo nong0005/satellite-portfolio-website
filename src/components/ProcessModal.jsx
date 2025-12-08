@@ -26,7 +26,6 @@ export default function ProcessModal({ open, onClose }) {
         </div>
       ),
     },
-
     // STEP 1 — Bad UX
     {
       title: "Confusing Logout Screen",
@@ -54,7 +53,6 @@ export default function ProcessModal({ open, onClose }) {
         </div>
       ),
     },
-
     // STEP 2 — UX Analysis
     {
       title: "Why It’s Confusing",
@@ -68,7 +66,6 @@ export default function ProcessModal({ open, onClose }) {
         </div>
       ),
     },
-
     // STEP 3 — UX Process: Empathize + Define
     {
       title: "UX Process — Understanding Users",
@@ -81,7 +78,6 @@ export default function ProcessModal({ open, onClose }) {
         </div>
       ),
     },
-
     // STEP 4 — UX Process: Ideate + Prototype
     {
       title: "UX Process — Generating Solutions",
@@ -93,7 +89,6 @@ export default function ProcessModal({ open, onClose }) {
         </div>
       ),
     },
-
     // STEP 5 — UX Process: Test + Implement
     {
       title: "UX Process — Testing & Implementation",
@@ -105,7 +100,6 @@ export default function ProcessModal({ open, onClose }) {
         </div>
       ),
     },
-
     // STEP 6 — Final Good UX
     {
       title: "Clean, Clear Logout",
@@ -126,7 +120,6 @@ export default function ProcessModal({ open, onClose }) {
         </div>
       ),
     },
-
     // STEP 7 — Feedback Slide
     {
       title: "Share Insights to Improve My Design",
@@ -135,6 +128,12 @@ export default function ProcessModal({ open, onClose }) {
       content: <FeedbackForm />,
     },
   ];
+
+  // --- HANDLE CLOSE: reset step to 0 before closing ---
+  const handleClose = () => {
+    setStep(0);
+    onClose();
+  };
 
   return (
     <AnimatePresence>
@@ -153,7 +152,7 @@ export default function ProcessModal({ open, onClose }) {
           >
             {/* Close Button */}
             <button
-              onClick={onClose}
+              onClick={handleClose}
               className="absolute top-3 right-3 p-2 rounded-full hover:bg-black/10"
             >
               <X size={20} />
@@ -197,7 +196,7 @@ export default function ProcessModal({ open, onClose }) {
                   Next
                 </button>
               ) : (
-                <button onClick={onClose} className="btn-primary px-5">
+                <button onClick={handleClose} className="btn-primary px-5">
                   Finish
                 </button>
               )}

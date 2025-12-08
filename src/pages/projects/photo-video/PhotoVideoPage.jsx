@@ -2,7 +2,6 @@ import { useState } from "react";
 import { photoVideoProjects } from "../../../data/photoVideoData";
 import { X } from "lucide-react";
 
-
 export default function PhotoVideoPage() {
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -12,7 +11,6 @@ export default function PhotoVideoPage() {
       <div className="w-full max-w-[1200px] mx-auto px-4">
         {photoVideoProjects.map((project) => (
           <div key={project.id} className="mb-12">
-
             <h2 className="text-2xl font-bold mt-8 mb-2">{project.title}</h2>
             <p className="text-secondary-300 mb-4">{project.description}</p>
 
@@ -28,9 +26,7 @@ export default function PhotoVideoPage() {
                       onClick={() =>
                         setSelectedImage({
                           src: img,
-                          description: `${project.title} — Image ${
-                            index + 1
-                          }`,
+                          description: `${project.title} — Image ${index + 1}`,
                         })
                       }
                     />
@@ -39,16 +35,19 @@ export default function PhotoVideoPage() {
               </div>
             )}
 
-            {/* ---------- VIDEO SECTION ---------- */}
+            {/* ---------- VIDEO SECTION (Responsive YouTube Iframe) ---------- */}
             {project.type === "video" && (
               <div className="w-full mt-4">
-                <video
-                  controls
-                  poster={project.thumbnail}
-                  className="w-full h-auto rounded-lg shadow-lg"
-                >
-                  <source src={project.videoSrc} type="video/mp4" />
-                </video>
+                <div className="relative" style={{ paddingTop: "56.25%" }}>
+                  <iframe
+                    src={project.youtubeLink} // Store your YouTube links in photoVideoData
+                    title={project.title}
+                    className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               </div>
             )}
           </div>
@@ -94,7 +93,6 @@ export default function PhotoVideoPage() {
             </div>
           </div>
         )}
-
       </div>
     </div>
   );

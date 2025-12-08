@@ -18,6 +18,7 @@
   --color-accent-warm: #EAE7E0;    /* Warm Light Beige */
   --color-accent-light: #ECEDED;   /* Light Gray */
   --color-white: #ffffff;          /* White */
+  --color-dark: #7A6C54;           /* Deep Earthy Oatmeal */
 
   /* Breakpoints */
   --breakpoint-sm: 640px;

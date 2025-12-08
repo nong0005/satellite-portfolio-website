@@ -40,18 +40,16 @@ export const photoVideoProjects = [
     {
       id: 3,
       title: "Video Project 1",
+      description: "YouTube Video Example 1",
       type: "video",
-      description: "A cinematic short visual experiment.",
-      videoSrc: "/images/photo-video/video/video-1.mp4",
-      thumbnail: "/images/photo-video/video/video1-thumbnail.jpg",
+      youtubeLink: "https://www.youtube.com/embed/K5ipSS98vZg?si=VkpZSuxYdvyIajOl",
     },
   
     {
       id: 4,
       title: "Video Project 2",
+      description: "YouTube Video Example 2",
       type: "video",
-      description: "Story-driven experimental visuals.",
-      videoSrc: "/images/photo-video/video/video-2.mp4",
-      thumbnail: "/images/photo-video/video/video2-thumbnail.jpg",
+      youtubeLink: "https://www.youtube.com/embed/MgNKwgg48MY?si=szb8tQ411b_AnbB_",
     },
   ];

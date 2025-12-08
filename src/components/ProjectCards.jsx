@@ -72,7 +72,7 @@ const ProjectCategoryCards = ({ showViewAll = true }) => {
             <motion.div
               key={index}
               whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.2 }}
               className="card w-[90%] sm:w-[300px] md:w-[350px] lg:w-[400px] h-[320px] relative flex flex-col justify-between p-6"
             >
               <div className="flex flex-col items-center justify-center">
@@ -101,7 +101,7 @@ const ProjectCategoryCards = ({ showViewAll = true }) => {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.03 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.2 }}
                 className="rounded-xl overflow-hidden shadow-lg bg-[var(--color-accent-light)] cursor-pointer 
                            border border-white hover:border-black hover:shadow-2xl transition-all flex flex-col"
               >

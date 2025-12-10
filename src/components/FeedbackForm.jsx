@@ -2,29 +2,35 @@ import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function FeedbackForm() {
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [feedback, setFeedback] = useState("");
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleSend = (e) => {
     e.preventDefault();
-    if (!name || !feedback) return alert("Please fill out all fields.");
+
+    if (!email || !feedback) return alert("Please fill out all fields.");
 
     setLoading(true);
-    const timestamp = new Date().toLocaleString();
+
+    const templateParams = {
+      email,          // User email collected
+      message: feedback,
+      time: new Date().toLocaleString(),
+    };
 
     emailjs
       .send(
-        "service_jigu2ji",       // Your EmailJS Service ID
-        "template_nasyf2v",      // Replace with your EmailJS Template ID
-        { name, message: feedback, time: timestamp },
-        "x6kxd62hhmdKrL3Hm"        // Replace with your EmailJS Public Key
+        "service_jigu2ji",     // Feedback service
+        "template_nasyf2v",    // Feedback template
+        templateParams,
+        "x6kxd62hhmdKrL3Hm"   // Your EmailJS public key
       )
       .then(
         () => {
           setSent(true);
-          setName("");
+          setEmail("");
           setFeedback("");
           setLoading(false);
         },
@@ -43,17 +49,19 @@ export default function FeedbackForm() {
       ) : (
         <>
           <input
-            type="text"
-            placeholder="Your Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            type="email"
+            placeholder="Your Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="w-full border rounded-lg p-3 text-sm"
+            required
           />
           <textarea
             placeholder="Your Feedback"
             value={feedback}
             onChange={(e) => setFeedback(e.target.value)}
             className="w-full border rounded-lg p-3 resize-none h-24 text-sm"
+            required
           />
           <button
             className="btn-primary w-full"

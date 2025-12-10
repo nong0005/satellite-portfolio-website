@@ -12,7 +12,7 @@ const webProjects = [
 
 const WebDevelopmentPage = () => {
   const handleOngoingProject = () => {
-    alert("Ongoing Project"); // Show message when user clicks
+    alert("The project is currently in progress. Details will be available soon. Thank you!"); // Show message when user clicks
   };
 
   return (
@@ -20,9 +20,15 @@ const WebDevelopmentPage = () => {
       <div className="max-w-[1200px] mx-auto px-6">
 
         {/* Page Title */}
-        <h1 className="text-5xl font-bold mb-12 text-center font-heading text-secondary">
-          Web Development <sup className="text-2xl align-super">1</sup>
+        <h1 className="text-5xl font-bold mb-12 text-center font-heading text-secondary flex justify-center items-center gap-2">
+          Web Development
+          <sup className="text-2xl w-8 h-8 inline-flex flex-shrink-0 items-center justify-center rounded-full bg-primary text-secondary">1</sup>
         </h1>
+
+         {/* ---------- PAGE DESCRIPTION ---------- */}
+         <p className="text-center text-secondary-300 max-w-2xl mx-auto mb-12 text-lg sm:text-xl">
+            Explore my web development portfolio, showcasing modern, responsive, and interactive websites. Each project highlights clean code, innovative design, and practical solutions to real-world web challenges.
+        </p>
 
         {/* CARD GRID */}
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">

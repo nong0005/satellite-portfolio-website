@@ -11,7 +11,7 @@ const digitalProjects = [
     description: "A fully designed handbook for Faculty under Algonquin College’s OTFT department."
   },
   {
-    title: "Immersive Lab Guidebook",
+    title: "Algonquin College Immersive Lab Guidebook",
     image: "/images/digital-design/immersive-handbook-banner.jpeg",
     link: "https://drive.google.com/file/d/1Ev5XZF8ILEmexc1aJG9RPgfyHBu4mSnh/view?usp=drive_link",
     description: "A clean guidebook created for the new immersive lab at Algonquin College."
@@ -35,10 +35,18 @@ const DigitalDesignPage = () => {
     <section className="py-20 text-secondary font-body">
       <div className="max-w-[1200px] mx-auto px-6">
 
-        {/* Page Title */}
-        <h1 className="text-5xl font-bold mb-12 text-center font-heading text-secondary">
-          Digital Design <sup className="text-2xl align-super">4</sup>
+        {/* PAGE TITLE */}
+        <h1 className="text-5xl font-bold mb-12 text-center font-heading text-secondary flex justify-center items-center">
+          Digital <br />
+          Graphics
+          <sup className="text-2xl w-8 h-8 inline-flex items-center justify-center rounded-full bg-primary text-secondary">4</sup>
         </h1>
+
+        {/* PAGE DESCRIPTION */}
+        <p className="text-center text-secondary-300 max-w-2xl mx-auto mb-12 text-lg sm:text-xl">
+          Explore my digital graphics portfolio, featuring creative designs, illustrations,
+          and visual concepts that showcase my skills in digital art and visual storytelling.
+        </p>
 
         {/* CARD GRID */}
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -51,8 +59,8 @@ const DigitalDesignPage = () => {
                          border border-white hover:border-black hover:shadow-2xl transition-all"
               onClick={() => window.open(project.link, "_blank")}
             >
-              {/* Banner Image */}
-              <div className="w-full h-48 overflow-hidden">
+              {/* FIXED ---- TALLER BANNER IMAGE */}
+              <div className="w-full h-64 sm:h-72 md:h-80 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -60,7 +68,7 @@ const DigitalDesignPage = () => {
                 />
               </div>
 
-              {/* Content */}
+              {/* CONTENT */}
               <div className="p-6 flex flex-col gap-3">
                 <h2 className="text-2xl font-semibold text-secondary">
                   {project.title}
@@ -80,6 +88,9 @@ const DigitalDesignPage = () => {
                 >
                   View Project
                 </button>
+                <p className="text-[var(--color-secondary)] text-sm">
+              Opens in a new tab · PDF format
+            </p>
               </div>
             </motion.div>
           ))}

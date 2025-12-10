@@ -6,32 +6,22 @@ import "../styles/contact.css";
 
 const ContactPage = () => {
   const getLocalTime = () => {
-    const options = {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: true,
-      timeZone: "America/Toronto",
-    };
+    const options = { hour: "2-digit", minute: "2-digit", hour12: true, timeZone: "America/Toronto" };
     return new Intl.DateTimeFormat("en-US", options).format(new Date());
   };
 
   return (
     <motion.div
       className="min-h-screen bg-[var(--color-white)] py-16"
-      initial={{ opacity: 0, y: 30 }} // start slightly below and invisible
-      animate={{ opacity: 1, y: 0 }}  // animate to visible at original position
-      transition={{ duration: 0.6, ease: "easeInOut" }} // smooth animation
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
     >
-      {/* Page Title */}
       <h1 className="contact-page-title">Contact Me</h1>
 
-      {/* Main container */}
       <div className="contact-page-container">
-
-        {/* Grid */}
         <div className="contact-wrapper">
 
-          {/* LEFT: Contact Form */}
           <AnimatedGradient className="contact-gradient">
             <motion.div
               className="contact-card"
@@ -39,22 +29,16 @@ const ContactPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1, ease: "easeInOut" }}
             >
-              <h2
-                className="text-4xl sm:text-5xl font-extrabold mb-4 text-[var(--color-secondary)] text-center md:text-left"
-                style={{ fontFamily: "var(--font-heading)" }}
-              >
+              <h2 className="text-4xl sm:text-5xl font-extrabold mb-4 text-[var(--color-secondary)] text-center md:text-left" style={{ fontFamily: "var(--font-heading)" }}>
                 Let’s create something amazing together
               </h2>
-
               <p className="text-[var(--color-secondary)] mb-8 text-lg text-center md:text-left">
                 I’d love to hear from you! Fill out the form below and I’ll get back to you as soon as possible.
               </p>
-
               <ContactForm />
             </motion.div>
           </AnimatedGradient>
 
-          {/* RIGHT: Profile Section */}
           <AnimatedGradient className="contact-gradient">
             <motion.div
               className="contact-card text-[var(--color-secondary)] flex flex-col items-center md:items-start gap-6"
@@ -62,36 +46,17 @@ const ContactPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
             >
-              <img
-                src="/images/satellite-headshot-resized.jpeg"
-                alt="Satellite"
-                className="contact-profile-img"
-              />
-
+              <img src="/images/satellite-headshot-resized.jpeg" alt="Satellite" className="contact-profile-img" />
               <div className="w-16 h-1 bg-[var(--color-secondary)] rounded-full"></div>
-
               <div className="flex flex-col gap-4 w-full items-center md:items-start text-center md:text-left">
-                <a
-                  href="mailto:nong0005@algonquinlive.com"
-                  className="btn-secondary w-full sm:w-auto px-4 py-2 break-words whitespace-normal"
-                >
+                <a href="mailto:nong0005@algonquinlive.com" className="btn-secondary w-full sm:w-auto px-4 py-2 break-words whitespace-normal">
                   nong0005@algonquinlive.com
                 </a>
-
-                <a
-                  href="tel:+3435582283"
-                  className="btn-secondary w-full sm:w-auto px-4 py-2 break-words whitespace-normal"
-                >
+                <a href="tel:+3435582283" className="btn-secondary w-full sm:w-auto px-4 py-2 break-words whitespace-normal">
                   +343 5582283
                 </a>
-
-                <div>
-                  <span className="font-bold">Address:</span> Ottawa, Canada
-                </div>
-
-                <div>
-                  <span className="font-bold">Local Time:</span> {getLocalTime()} EST
-                </div>
+                <div><span className="font-bold">Address:</span> Ottawa, Canada</div>
+                <div><span className="font-bold">Local Time:</span> {getLocalTime()} EST</div>
               </div>
             </motion.div>
           </AnimatedGradient>

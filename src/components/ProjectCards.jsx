@@ -65,7 +65,7 @@ const ProjectCategoryCards = ({ showViewAll = true }) => {
     <section className="py-20 text-secondary" id="projects">
       <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-4xl font-bold font-[var(--font-heading)] mb-12 text-center">
+        <h2 className="text-4xl font-bold mb-12 text-center font-heading text-secondary">
           Project Categories
         </h2>
 
@@ -95,7 +95,7 @@ const ProjectCategoryCards = ({ showViewAll = true }) => {
 
         {/* Featured Projects */}
         <div className="mt-20">
-          <h3 className="text-3xl font-bold mb-10 text-center text-secondary">
+          <h3 className="text-4xl font-bold mb-12 text-center font-heading text-secondary">
             Featured Projects
           </h3>
 
@@ -126,12 +126,17 @@ const ProjectCategoryCards = ({ showViewAll = true }) => {
                     {proj.title}
                   </h4>
 
+                  {/* CONDITIONAL CTA BUTTON */}
                   <Link
                     to={proj.link}
                     className="btn-primary mt-4 w-fit"
                   >
-                    View Case Study
+                    {proj.title.includes("Tailgators") ||
+                    proj.title.includes("Makerspace")
+                      ? "View Case Study"
+                      : "View Project"}
                   </Link>
+
                 </div>
               </motion.div>
             ))}

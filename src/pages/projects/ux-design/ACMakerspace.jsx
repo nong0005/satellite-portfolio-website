@@ -1,476 +1,338 @@
+// src/pages/ACMakerspacePage.jsx
 import React from "react";
-import {
-  ArrowRight,
-  Users,
-  MapPin,
-  Monitor,
-  Video,
-  Layers,
-  Link2,
-  CheckCircle,
-  Clock,
-} from "lucide-react";
 import { motion } from "framer-motion";
+import { Users, Clock, Monitor } from "lucide-react";
+import AnimatedGradient from "../../../components/AnimatedGradient";
 
 const sectionFade = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-export default function ACMakerspace() {
+export default function ACMakerspacePage() {
   return (
-    <div className="ac-makerspace-page mx-auto px-4 py-12 font-body text-secondary">
-      {/* root container constrained to 1200px */}
-      <div className="max-w-[1200px] mx-auto space-y-16">
-        {/* HERO */}
-        <motion.header
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sectionFade}
-          className="relative rounded-xl overflow-hidden shadow-2xl"
-        >
-          <img
-            src="/images/project-banners/ac-makerspace-banner-resized.jpeg"
-            alt="AC Makerspace Hero"
-            className="w-full h-64 md:h-[420px] object-cover"
-          />
-          <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-start gap-3 p-6 md:p-12">
-            <h1 className="text-3xl md:text-4xl font-heading font-bold text-[#ffffff] px-3 py-1 rounded">
-              Immersive Lab — Makerspace Training Experience
-            </h1>
-            <p className="text-sm md:text-base text-[#ffffff] px-3 py-1 rounded max-w-2xl">
-              UX-led design for an interactive, visual training system — combining
-              web modules, 360/standard video, and 3D assets to teach safe Makerspace
-              use and increase user confidence.
-            </p>
-          </div>
-        </motion.header>
+    <div className="mx-auto px-4 py-12 max-w-[1200px] font-body text-gray-800 space-y-12">
 
-        {/* Top details: role, client, timeline */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sectionFade}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start"
-        >
-          <div className="bg-white/60 p-5 rounded-lg shadow">
-            <h3 className="text-[#1A1A1A] font-heading font-semibold flex items-center gap-2">
-              <Monitor size={18} /> Project
-            </h3>
-            <p className="text-gray-700 mt-2">
-              Immersive Lab — Makerspace training UX & web module (Algonquin College)
-            </p>
-          </div>
-
-          <div className="bg-white/60 p-5 rounded-lg shadow">
-            <h3 className="text-[#1A1A1A] font-heading font-semibold flex items-center gap-2">
-              <Users size={18} /> Role & Team
-            </h3>
-            <p className="text-gray-700 mt-2">
-              Lead UX Designer: Satellite Nongmaithem. UX Team (5) + Video Team (6).
-              Focus: UX research, IA, wireframes, prototypes, usability testing.
-            </p>
-          </div>
-
-          <div className="bg-white/60 p-5 rounded-lg shadow">
-            <h3 className="text-[#1A1A1A] font-heading font-semibold flex items-center gap-2">
-              <Clock size={18} /> Timeline
-            </h3>
-            <p className="text-gray-700 mt-2">September — December 2025 (4 months)</p>
-            <p className="text-gray-700 mt-1 text-sm">Client: Stephen Gagné (AC Entrepreneurship)</p>
-          </div>
-        </motion.section>
-
-        {/* Problem statement */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sectionFade}
-          className="bg-accent-warm/60 p-6 rounded-lg border-l-4 border-[#1A1A1A]"
-        >
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-[#1A1A1A] flex items-center gap-3">
-            <ArrowRight size={20} className="text-[#1A1A1A]" />
-            Problem Statement
-          </h2>
-
-          {/* single-sentence, Google-style problem: concise */}
-          <p className="mt-4 text-lg text-gray-800">
-            Students at Algonquin College need a clear, accessible path to learn how to safely
-            find and operate Makerspace equipment because current guidance is fragmented,
-            inconsistent, and intimidating — reducing confidence and usage.
+      {/* HERO */}
+      <motion.header
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={sectionFade}
+        className="relative rounded-xl overflow-hidden shadow-2xl"
+      >
+        <img
+          src="/images/project-banners/ac-makerspace-banner-resized.jpeg"
+          alt="AC Makerspace Hero"
+          className="w-full h-64 md:h-[420px] object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60 flex flex-col justify-center items-start gap-3 p-6 md:p-12">
+          <h1 className="text-3xl md:text-4xl font-bold text-white px-3 py-1 rounded">
+            Algonquin College — MakerSpace Project
+          </h1>
+          <p className="text-sm md:text-base text-white px-3 py-1 rounded max-w-2xl">
+            Lead UX Designer: Satellite Nongmaithem | Responsible for user research, information architecture, and designing user flows. Conducted wireframing, usability testing, and iterative improvements, leading to an effective, user-centered training system implementation.
           </p>
-        </motion.section>
+        </div>
+      </motion.header>
 
-        {/* Context & Story */}
+      {/* Role / Project / Timeline */}
+      <AnimatedGradient>
         <motion.section
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={sectionFade}
-          className="space-y-4"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
-          <h2 className="text-2xl md:text-3xl font-heading text-[#1A1A1A] flex items-center gap-2">
-            <MapPin size={20} className="text-[#1A1A1A]" />
-            Context & Story
-          </h2>
-          <p className="text-gray-700 leading-relaxed">
-            Students reported feeling excitement and intimidation in equal measure at the
-            Makerspace. While tools and outcomes were motivating, uncertainty around safety
-            protocols, where to begin, and scattered documentation made first experiences
-            stressful. I led UX to build a friendly, visual, and scaffolded learning path
-            — reducing friction and helping learners move quickly from curious to confident.
-          </p>
-        </motion.section>
-
-        {/* UX Phases — full flow */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sectionFade}
-          className="space-y-6"
-        >
-          <h2 className="text-2xl md:text-3xl font-heading text-[#1A1A1A] flex items-center gap-2">
-            <Layers size={20} className="text-[#1A1A1A]" />
-            UX Phases (Discover → Define → Ideate → Prototype → Test → Deliver)
-          </h2>
-
-          {/* Phase cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Discover */}
-            <div className="bg-white p-5 rounded-lg shadow">
-              <h3 className="font-semibold text-[#1A1A1A]">Discover</h3>
-              <p className="text-gray-700 mt-2 text-sm leading-relaxed">
-                Research: stakeholder interviews (Stephen Gagné & faculty), student interviews,
-                workshop observation, and audit of current Makerspace docs. Outcome: prioritized
-                list of user pain points and initial project goals.
-              </p>
-              <p className="mt-3 text-sm text-gray-600">
-                Deliverables: research notes, competitive analysis, empathy maps.
-              </p>
-            </div>
-
-            {/* Define */}
-            <div className="bg-white p-5 rounded-lg shadow">
-              <h3 className="font-semibold text-[#1A1A1A]">Define</h3>
-              <p className="text-gray-700 mt-2 text-sm leading-relaxed">
-                Synthesized research into a single problem statement, HMWs, and core user needs.
-                Created three personas and a user journey to map moments of friction and opportunity.
-              </p>
-              <p className="mt-3 text-sm text-gray-600">Deliverables: personas, problem & HMW statements.</p>
-            </div>
-
-            {/* Ideate */}
-            <div className="bg-white p-5 rounded-lg shadow">
-              <h3 className="font-semibold text-[#1A1A1A]">Ideate</h3>
-              <p className="text-gray-700 mt-2 text-sm leading-relaxed">
-                Brainstormed features: interactive hotspots, step-by-step safety guides, quick
-                reference cards, and a modular web hub. Sketched user flows and IA to prioritize
-                the MVP experience.
-              </p>
-              <p className="mt-3 text-sm text-gray-600">Deliverables: IA, user flows, Crazy-8 sketches.</p>
+          <div className="flex items-center gap-3 p-5 rounded-2xl shadow-lg">
+            <Monitor className="text-secondary w-6 h-6" />
+            <div>
+              <h3 className="font-semibold text-secondary">Project</h3>
+              <p className="text-secondary text-sm">Immersive Lab — MakerSpace Safety UX</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
-            {/* Prototype */}
-            <div className="bg-white p-5 rounded-lg shadow">
-              <h3 className="font-semibold text-[#1A1A1A]">Prototype</h3>
-              <p className="text-gray-700 mt-2 text-sm leading-relaxed">
-                Built low-fidelity wireframes, iterated into high-fidelity interactive prototypes
-                (Figma). Focus: clear onboarding, hotspot interactions, and tool-specific step flows.
-              </p>
-              <p className="mt-3 text-sm text-gray-600">Deliverables: lo-fi & hi-fi prototypes (Figma).</p>
+          <div className="flex items-center gap-3 p-5 rounded-2xl shadow-lg">
+            <Users className="text-secondary w-6 h-6" />
+            <div>
+              <h3 className="font-semibold text-secondary">Role & Team</h3>
+              <p className="text-secondary text-sm">Lead UX Designer | UX Team (5) + Video Team (5)</p>
             </div>
+          </div>
 
-            {/* Test */}
-            <div className="bg-white p-5 rounded-lg shadow">
-              <h3 className="font-semibold text-[#1A1A1A]">Test</h3>
-              <p className="text-gray-700 mt-2 text-sm leading-relaxed">
-                Conducted moderated usability tests with student participants and video team members.
-                Measured task success, confusion points (3D printer interaction, icon labels), and reaction.
-              </p>
-              <p className="mt-3 text-sm text-gray-600">Deliverables: usability test notes & updated designs.</p>
-            </div>
-
-            {/* Deliver */}
-            <div className="bg-white p-5 rounded-lg shadow">
-              <h3 className="font-semibold text-[#1A1A1A]">Deliver</h3>
-              <p className="text-gray-700 mt-2 text-sm leading-relaxed">
-                Finalized interactive prototype and trainer guide for instructors. Handoff included
-                IA, annotated flows, and accessibility considerations.
-              </p>
-              <p className="mt-3 text-sm text-gray-600">Deliverables: final prototype, trainer guide, asset pack.</p>
+          <div className="flex items-center gap-3 p-5 rounded-2xl shadow-lg">
+            <Clock className="text-secondary w-6 h-6" />
+            <div>
+              <h3 className="font-semibold text-secondary">Timeline</h3>
+              <p className="text-secondary text-sm">September — December 2025</p>
             </div>
           </div>
         </motion.section>
+      </AnimatedGradient>
 
-        {/* Competitive Analysis short */}
+      {/* Project Overview */}
+      <AnimatedGradient>
         <motion.section
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={sectionFade}
-          className="space-y-4"
         >
-          <h3 className="text-2xl font-heading text-[#1A1A1A] flex items-center gap-2">
-            <Video size={18} className="text-[#1A1A1A]" /> Competitive summary
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-            <img
-              src="/images/ac-makerspace/ingenium.jpeg"
-              alt="Ingenium"
-              className="h-20 object-contain"
-            />
-            <img
-              src="/images/ac-makerspace/canada-meseum-natute.jpeg"
-              alt="Nature"
-              className="h-20 object-contain"
-            />
-            <img
-              src="/images/ac-makerspace/canada-meseum-history.jpeg"
-              alt="History"
-              className="h-20 object-contain"
-            />
-          </div>
-
-          <p className="text-gray-700">
-            Key lessons: interactive guided tours, curriculum alignment, and take-home activities
-            work well. Gaps we targeted: hands-on tool operation simulation, safety walkthroughs,
-            and troubleshooting practice.
+          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-4">Project Overview</h2>
+          <p>
+            Students often felt a mix of excitement and intimidation in the Makerspace. While the tools and potential outcomes were motivating, they struggled with uncertainty around safety protocols, unclear starting points, and scattered documentation. 
+          </p>
+          <p className="mt-2">
+            Our goal was to create a warm, guided experience that helps learners go from curious to confident quickly — making the first steps in the Makerspace less stressful and more rewarding.
           </p>
         </motion.section>
+      </AnimatedGradient>
 
-        {/* Personas — horizontal on mobile, grid on desktop */}
+      {/* Discover */}
+      <AnimatedGradient>
         <motion.section
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={sectionFade}
         >
-          <h3 className="text-2xl md:text-3xl font-heading text-[#1A1A1A] flex items-center gap-2">
-            <Users size={20} className="text-[#1A1A1A]" /> Personas
-          </h3>
+          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-4">Discover / Research</h2>
+          <p className="mb-2">We explored how students and staff interacted with the Makerspace and identified key pain points:</p>
+          <ul className="list-disc list-inside space-y-1">
+            <li>Stakeholder interviews with faculty and Stephen Gagné</li>
+            <li>Student interviews and workshop observations</li>
+            <li>Audit of existing Makerspace documentation</li>
+          </ul>
+          <p className="mt-2 font-semibold">Insights & Outcomes:</p>
+          <ul className="list-disc list-inside space-y-1">
+            <li>Prioritized user pain points and project goals</li>
+            <li>Empathy mapping revealed students value visual guidance, repeatable practice, and efficient learning.</li>
+          </ul>
 
-          <p className="text-gray-700 mt-2">
-            Three core user types guided the product decisions — each represents a common learner need.
-          </p>
+          <p className="mt-4 font-semibold">Competitive Analysis:</p>
+<div className="flex gap-6 mt-2 items-center overflow-x-auto pb-2">
+  {/* Canada Museum History */}
+  <div className="flex flex-col items-center min-w-[140px]">
+    <img
+      src="/images/ac-makerspace/canada-meseum-history.jpeg"
+      alt="Canada Museum History"
+      className="w-32 rounded shadow-md"
+    />
+    <p className="text-sm mt-1 text-center">Canada Museum History</p>
+  </div>
 
-          <div className="mt-4">
-            <div className="flex gap-6 overflow-x-auto md:overflow-visible md:grid md:grid-cols-3 pb-4">
-              {/* Mary */}
-              <motion.article
-                className="min-w-[280px] md:min-w-0 bg-white rounded-xl shadow p-4 border border-gray-100"
-                whileHover={{ scale: 1.02 }}
-              >
-                <img
-                  src="/images/ac-makerspace/personas/persona-1.jpeg"
-                  alt="Mary Thompson"
-                  className="w-full h-48 object-cover rounded-lg mb-3"
-                />
-                <h4 className="font-semibold text-[#1A1A1A]">Mary Thompson</h4>
-                <p className="text-sm text-gray-600 font-medium">Engineering student — Beginner</p>
-                <p className="text-gray-700 text-sm mt-2 leading-relaxed">
-                  Needs visual, step-by-step onboarding and quick access to staff support — wants to feel
-                  confident using 3D printers and laser cutters.
-                </p>
-              </motion.article>
+  {/* Canada Museum Nature */}
+  <div className="flex flex-col items-center min-w-[140px]">
+    <img
+      src="/images/ac-makerspace/canada-meseum-natute.jpeg"
+      alt="Canada Museum Nature"
+      className="w-32 rounded shadow-md"
+    />
+    <p className="text-sm mt-1 text-center">Canada Museum Nature</p>
+  </div>
 
-              {/* Alex */}
-              <motion.article
-                className="min-w-[280px] md:min-w-0 bg-white rounded-xl shadow p-4 border border-gray-100"
-                whileHover={{ scale: 1.02 }}
-              >
-                <img
-                  src="/images/ac-makerspace/personas/persona-2.jpeg"
-                  alt="Alex Gallo"
-                  className="w-full h-48 object-cover rounded-lg mb-3"
-                />
-                <h4 className="font-semibold text-[#1A1A1A]">Alex Gallo</h4>
-                <p className="text-sm text-gray-600 font-medium">Student technician</p>
-                <p className="text-gray-700 text-sm mt-2 leading-relaxed">
-                  Needs repeatable training, troubleshooting references, and emergency practice scenarios to
-                  confidently help other users.
-                </p>
-              </motion.article>
+  {/* Ingenium */}
+  <div className="flex flex-col items-center min-w-[140px]">
+    <img
+      src="/images/ac-makerspace/ingenium.jpeg"
+      alt="Ingenium"
+      className="w-32 rounded shadow-md"
+    />
+    <p className="text-sm mt-1 text-center">Ingenium</p>
+  </div>
+</div>
 
-              {/* Sofia */}
-              <motion.article
-                className="min-w-[280px] md:min-w-0 bg-white rounded-xl shadow p-4 border border-gray-100"
-                whileHover={{ scale: 1.02 }}
-              >
-                <img
-                  src="/images/ac-makerspace/personas/persona-3.jpeg"
-                  alt="Sofia Ramirez"
-                  className="w-full h-48 object-cover rounded-lg mb-3"
-                />
-                <h4 className="font-semibold text-[#1A1A1A]">Sofia Ramirez</h4>
-                <p className="text-sm text-gray-600 font-medium">Part-time designer</p>
-                <p className="text-gray-700 text-sm mt-2 leading-relaxed">
-                  Needs time-efficient, intermediate guides and clear booking info so evening/weekend work is productive.
-                </p>
-              </motion.article>
+<ul className="list-disc list-inside mt-4 space-y-1 text-gray-700">
+  <li>Competitors lack true hands-on simulations, so our system allows learners to actually practice machine operation and safety steps virtually.</li>
+  <li>Current museum programs are not self-paced.</li>
+  <li>Competitors mainly offer live, observation-based workshops, while our platform provides interactive, repeatable training that strengthens recall and confidence.</li>
+</ul>
+        </motion.section>
+      </AnimatedGradient>
+
+      {/* Define / Personas */}
+      <AnimatedGradient>
+        <motion.section initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionFade}>
+          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-4">Define / Personas</h2>
+          <p>Synthesized research into problem statements, user needs, and personas.</p>
+          <p className="mt-2 font-semibold">Problem Statement:</p>
+          <p>Students need a clear, accessible path to safely use Makerspace equipment. Current guidance is fragmented and intimidating, reducing confidence and participation.</p>
+
+          <div className="mt-4 flex gap-6 overflow-x-auto md:overflow-visible md:grid md:grid-cols-3 pb-4">
+            {/* Mary */}
+            <div className="min-w-[280px] md:min-w-0 bg-white rounded-xl shadow p-4 border border-gray-100">
+              <img src="/images/ac-makerspace/personas/persona-1.jpeg" alt="Mary Thompson" className="w-full h-48 object-cover rounded-lg mb-3" />
+              <h4 className="font-semibold text-[#1A1A1A]">Mary Thompson</h4>
+              <p className="text-sm text-gray-600 font-medium">Beginner Engineering Student</p>
+              <p className="text-gray-700 text-sm mt-2">Needs step-by-step onboarding and quick access to staff support.</p>
+            </div>
+
+            {/* Alex */}
+            <div className="min-w-[280px] md:min-w-0 bg-white rounded-xl shadow p-4 border border-gray-100">
+              <img src="/images/ac-makerspace/personas/persona-2.jpeg" alt="Alex Gallo" className="w-full h-48 object-cover rounded-lg mb-3" />
+              <h4 className="font-semibold text-[#1A1A1A]">Alex Gallo</h4>
+              <p className="text-sm text-gray-600 font-medium">Student Technician</p>
+              <p className="text-gray-700 text-sm mt-2">Needs repeatable training, troubleshooting references, and emergency practice scenarios.</p>
+            </div>
+
+            {/* Sofia */}
+            <div className="min-w-[280px] md:min-w-0 bg-white rounded-xl shadow p-4 border border-gray-100">
+              <img src="/images/ac-makerspace/personas/persona-3.jpeg" alt="Sofia Ramirez" className="w-full h-48 object-cover rounded-lg mb-3" />
+              <h4 className="font-semibold text-[#1A1A1A]">Sofia Ramirez</h4>
+              <p className="text-sm text-gray-600 font-medium">Part-time Designer</p>
+              <p className="text-gray-700 text-sm mt-2">Needs time-efficient guides and clear booking info for evening/weekend work.</p>
             </div>
           </div>
-        </motion.section>
 
-        {/* IA & User Flows banners */}
+          <p className="mt-4 font-semibold">How Might We:</p>
+          <ul className="list-disc list-inside space-y-1">
+            <li>Make the Makerspace easier for new users like Mary to learn safety rules and machine steps</li>
+            <li>Create a fun, simple training program that helps Alex remember safety steps better</li>
+            <li>Help users like Sofia learn complex machines confidently in a short time</li>
+          </ul>
+
+          <p className="mt-2 font-semibold">Goal Statement:</p>
+          <p>Our immersive learning system allows students and staff to safely and confidently learn, recall, and apply safety and machine operation steps through interactive, visual, and self-paced training.</p>
+        </motion.section>
+      </AnimatedGradient>
+       {/* Ideate Phase */}
+<AnimatedGradient>
+  <motion.section
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    variants={sectionFade}
+  >
+    <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-4">Ideate Phase</h2>
+    <p className="text-gray-700 font-semibold">Brainstormed Features:</p>
+    <ul className="list-disc list-inside text-gray-700 mb-2">
+      <li>Interactive hotspots</li>
+      <li>Step-by-step safety guides</li>
+      <li>Quick reference cards</li>
+      <li>Modular web hub</li>
+    </ul>
+    <p className="text-gray-700 font-semibold">Deliverables:</p>
+    <ul className="list-disc list-inside text-gray-700 mb-4">
+      <li>Information Architecture (IA) diagrams</li>
+      <li>User flows</li>
+    </ul>
+
+    <div className="flex gap-4 overflow-x-auto md:grid md:grid-cols-2">
+      <a href="https://www.figma.com/design/DGhNERSaUqSuVsAV7rpwaW/Immersive-Lab-UX-Design--Fall-?node-id=100-193&p=f&t=LgSxIr5gq5C6pU9V-0" target="_blank" rel="noopener noreferrer">
+        <img src="/images/ac-makerspace/ia-banner.jpeg" alt="Information Architecture" className="rounded-lg shadow-md" />
+      </a>
+      <a href="https://www.figma.com/board/asQ32griIeMMAAjCoH23ZP/Immersive-Lab-UX-Design-Figjam-Board?node-id=44-186&p=f&t=6AjVsAZ62TQfIQAq-0" target="_blank" rel="noopener noreferrer">
+        <img src="/images/ac-makerspace/userflow-banner.jpeg" alt="User Flows" className="rounded-lg shadow-md" />
+      </a>
+    </div>
+  </motion.section>
+</AnimatedGradient>
+
+{/* Prototype Phase */}
+<AnimatedGradient>
+  <motion.section
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    variants={sectionFade}
+  >
+    <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-4">Prototype Phase</h2>
+    <p className="text-gray-700 mb-2">
+      Built low-fidelity wireframes, iterated into high-fidelity interactive prototypes (Figma). Focus on clear onboarding, hotspot interactions, and tool-specific step flows.
+    </p>
+    <p className="text-gray-700 font-semibold">Deliverables:</p>
+    <ul className="list-disc list-inside text-gray-700 mb-4">
+      <li>Lo-fi & hi-fi prototypes (Figma)</li>
+    </ul>
+
+    <div className="flex gap-4 overflow-x-auto md:grid md:grid-cols-2">
+      <a href="https://www.figma.com/design/DGhNERSaUqSuVsAV7rpwaW/Immersive-Lab-UX-Design--Fall-?node-id=136-194&p=f&t=LgSxIr5gq5C6pU9V-0" target="_blank" rel="noopener noreferrer">
+        <img src="/images/ac-makerspace/lofi-banner.jpeg" alt="Lo-fi Prototype" className="rounded-lg shadow-md" />
+      </a>
+      <a href="https://www.figma.com/design/DGhNERSaUqSuVsAV7rpwaW/Immersive-Lab-UX-Design--Fall-?node-id=240-3&p=f&t=LgSxIr5gq5C6pU9V-0" target="_blank" rel="noopener noreferrer">
+        <img src="/images/ac-makerspace/hifi-banner.jpeg" alt="Hi-fi Prototype" className="rounded-lg shadow-md" />
+      </a>
+    </div>
+  </motion.section>
+</AnimatedGradient>
+      {/* Test / Usability */}
+<AnimatedGradient>
+  <motion.section
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    variants={sectionFade}
+  >
+    <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-4">Test / Usability</h2>
+
+    <p className="font-semibold">MakerSpace Usability Test Plan:</p>
+    <ul className="list-disc list-inside space-y-1">
+      <li>Moderator: Introduce tasks neutrally, encourage think-aloud, clarify only if stuck.</li>
+      <li>Time Tracker: Record start/end times and delays.</li>
+      <li>Note Taker: Record actions, comments, first impressions, and emotions.</li>
+      <li>Observers: Watch body language, hesitation, excitement, mistakes, and interaction with hotspots, icons, and the 3D printer.</li>
+    </ul>
+
+    <p className="mt-2 font-semibold">Tasks:</p>
+    <ol className="list-decimal list-inside space-y-1">
+      <li>Initial Impressions – “What do you notice? How does it feel?”</li>
+      <li>Hotspot Exploration – “What do these hotspots do?”</li>
+      <li>Locate MakerSpace – “Find it on the map.”</li>
+      <li>Explore 3D Printer – “Try exploring it.”</li>
+      <li>Menu & End Session – “Use the menu and end the session.”</li>
+      <li>Reflection – “What worked well? What was confusing? Suggestions?”</li>
+    </ol>
+
+    <p className="mt-2 font-semibold">Guidelines / Planning:</p>
+    <ul className="list-disc list-inside space-y-1 text-gray-700">
+      <li>Ask open-ended questions to encourage detailed feedback.</li>
+      <li>Encourage participants to think aloud as they perform tasks.</li>
+      <li>Observe users first, only intervene if they are completely stuck.</li>
+      <li>Capture both actions and verbal feedback for detailed analysis.</li>
+    </ul>
+
+    <p className="mt-2 font-semibold">Participants & Findings:</p>
+    <ul className="list-disc list-inside space-y-1">
+      <li>Abel: Smooth navigation, completed all tasks including quiz, suggested adding text/audio & icon labels.</li>
+      <li>Observed issues: 3D printer confusion, restart not working, overlapping text, unclear icon labels, inconsistent quiz gradients.</li>
+      <li>Question structure needs to be rephrased for clarity and easy scanning.</li>
+      <li>The font should closely match Algonquin College’s branding, even though the software does not support the official Algonquin font.</li>
+    </ul>
+
+    <p className="mt-4 font-semibold">Updated Screenshots:</p>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-2">
+      <img src="/images/ac-makerspace/updated-screen-1.png" alt="Updated Screen 1" className="rounded shadow-md" />
+      <img src="/images/ac-makerspace/updated-screen-2.png" alt="Updated Screen 2" className="rounded shadow-md" />
+    </div>
+  </motion.section>
+</AnimatedGradient>
+     {/* Deliver Phase */}
+     <AnimatedGradient>
         <motion.section
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={sectionFade}
-          className="space-y-4"
         >
-          <h3 className="text-2xl font-heading text-[#1A1A1A] flex items-center gap-2">
-            <Layers size={18} className="text-[#1A1A1A]" /> Information Architecture & Flows
-          </h3>
-
-          <p className="text-gray-700">
-            The IA groups content into: Onboarding → Tool Library → Safety Guides → Interactive Scenarios → Quiz/Assessment → Trainer Dashboard.
-            Below are visual banners linking to the full diagrams (Figma).
+          <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-4">Deliver Phase</h2>
+          <p className="text-gray-700 mb-2">
+            Finalized interactive prototype and trainer guide. Handoff included IA, annotated flows, and accessibility considerations.
           </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-3">
-            <a
-              href="https://www.figma.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <img
-                src="/images/ac-makerspace/ia-banner.jpeg"
-                alt="Information architecture banner"
-                className="w-full h-40 object-cover rounded-lg shadow"
-              />
-            </a>
-
-            <a
-              href="https://www.figma.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <img
-                src="/images/ac-makerspace/userflow-banner.jpeg"
-                alt="User flow banner"
-                className="w-full h-40 object-cover rounded-lg shadow"
-              />
-            </a>
-
-            <a
-              href="https://www.figma.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-            </a>
-          </div>
-        </motion.section>
-
-        {/* Wireframes & Hi-fi */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sectionFade}
-          className="space-y-4"
-        >
-          <h3 className="text-2xl md:text-3xl font-heading text-[#1A1A1A] flex items-center gap-2">
-            <Video size={18} className="text-[#1A1A1A]" /> Wireframes & High-fidelity
-          </h3>
-
-          <p className="text-gray-700">
-            Iterated from sketches to clickable prototypes. Focus areas: onboarding flow, hotspot interactions,
-            and the quick-check safety quiz. Click through the prototype for full interaction.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <img
-              src="/images/ac-makerspace/lofi-banner.jpeg"
-              alt="Lo-fi"
-              className="w-full h-56 object-cover rounded-lg shadow"
-            />
-            <img
-              src="/images/ac-makerspace/hifi-banner.jpeg"
-              alt="Hi-fi"
-              className="w-full h-56 object-cover rounded-lg shadow"
-            />
-          </div>
-
-          <a
-            href="https://www.figma.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-3 text-[#1A1A1A] font-semibold"
-          >
-            <Link2 size={16} /> View interactive prototype
-          </a>
-        </motion.section>
-
-        {/* Usability Testing summary */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sectionFade}
-          className="space-y-4"
-        >
-          <h3 className="text-2xl font-heading text-[#1A1A1A] flex items-center gap-2">
-            <CheckCircle size={18} className="text-[#1A1A1A]" /> Usability Testing (Round 1)
-          </h3>
-
-          <p className="text-gray-700">
-            Two participants from the video team tested core flows (map → hotspot → 3D printer → quiz).
-            What worked: hotspots, audio clarity, map navigation.
-            What needed improvement: icon labels, 3D printer affordance, restart/quiz reset behavior.
-          </p>
-
-          <ul className="list-disc list-inside text-gray-700 mt-2">
-            <li>Action: added visible text labels below icons and captions for audio.</li>
-            <li>Action: redesigned quiz restart to reset progress and provide confirmation.</li>
-            <li>Outcome: improved first-time task success and reduced confusion in follow-up tests.</li>
+          <ul className="list-disc list-inside text-gray-700 mb-2">
+            <li>Competitive analysis</li>
+            <li>Personas & user journey maps</li>
+            <li>IA & user flows</li>
+            <li>Lo-fi & hi-fi prototypes</li>
+            <li>Usability report</li>
+          </ul>
+          <p className="text-gray-700 mb-2 font-semibold">Impact & Next Steps:</p>
+          <ul className="list-disc list-inside text-gray-700">
+            <li>Increased clarity and confidence among testers.</li>
+            <li>Integrate video team assets, add adaptive learning paths, pilot with a wider student cohort.</li>
           </ul>
         </motion.section>
-
-        {/* Deliverables & Outcomes */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={sectionFade}
-          className="space-y-4 pb-12"
-        >
-          <h3 className="text-2xl md:text-3xl font-heading text-[#1A1A1A] flex items-center gap-2">
-            <Monitor size={18} className="text-[#1A1A1A]" /> Deliverables & Impact
-          </h3>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white p-5 rounded-lg shadow">
-              <h4 className="font-semibold text-[#1A1A1A]">Deliverables</h4>
-              <ul className="list-disc list-inside text-gray-700 mt-2 space-y-1">
-                <li>Competitive analysis, personas, user journey maps</li>
-                <li>IA & user flow diagrams (Figma)</li>
-                <li>Lo-fi & hi-fi interactive prototypes</li>
-                <li>Usability report & trainer guide</li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-5 rounded-lg shadow">
-              <h4 className="font-semibold text-[#1A1A1A]">Impact & Next steps</h4>
-              <p className="text-gray-700 mt-2">
-                Early results showed increased clarity and confidence in testers. Next steps:
-                integrate video team assets, add adaptive learning paths, and pilot the training
-                with a wider student cohort.
-              </p>
-            </div>
-          </div>
-        </motion.section>
-      </div>
+      </AnimatedGradient>
     </div>
   );
 }

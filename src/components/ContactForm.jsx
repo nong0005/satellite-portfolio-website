@@ -26,17 +26,19 @@ export default function ContactForm() {
       name: formData.name,
       email: formData.email,
       organization: formData.organization,
-      subject: formData.subject,
+      subject: formData.subject
+        ? `${formData.subject} (from Portfolio Website)`
+        : "(from Portfolio Website)",
       message: formData.message,
       time: new Date().toLocaleString(),
     };
 
     emailjs
-      .send("service_nm10222", "template_gqe4oun", templateParams, "x6kxd62hhmdKrL3Hm")
+      .send("service_nm10222", "template_e731q1s", templateParams, "x6kxd62hhmdKrL3Hm")
       .then(
-        (response) => {
+        () => {
           setSuccessMessage(
-            `Thank you, ${formData.name || "there"}! Your message has been received, I’ll get back to you as soon as possible.`
+            `Thank you, ${formData.name || "there"}! Your message has been received. I’ll get back to you soon.`
           );
           setFormData({
             name: "",
@@ -48,7 +50,7 @@ export default function ContactForm() {
           setTimeout(() => setSuccessMessage(""), 7000);
         },
         (error) => {
-          console.log("FAILED...", error);
+          console.error("FAILED...", error);
           alert("Something went wrong. Please try again later.");
         }
       );
@@ -79,18 +81,18 @@ export default function ContactForm() {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="What's your name? *"
+            placeholder="Your Name *"
             required
-            className="flex-1 p-3 rounded-lg border border-secondary/30 bg-white/30 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+            className="flex-1 p-3 rounded-lg border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
           />
           <input
             type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="What's your email? *"
+            placeholder="Your Email *"
             required
-            className="flex-1 p-3 rounded-lg border border-secondary/30 bg-white/30 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+            className="flex-1 p-3 rounded-lg border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
           />
         </div>
 
@@ -101,7 +103,7 @@ export default function ContactForm() {
             value={formData.organization}
             onChange={handleChange}
             placeholder="Organization Name (optional)"
-            className="flex-1 p-3 rounded-lg border border-secondary/30 bg-white/30 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+            className="flex-1 p-3 rounded-lg border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
           />
           <input
             type="text"
@@ -109,7 +111,7 @@ export default function ContactForm() {
             value={formData.subject}
             onChange={handleChange}
             placeholder="Subject"
-            className="flex-1 p-3 rounded-lg border border-secondary/30 bg-white/30 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+            className="flex-1 p-3 rounded-lg border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
           />
         </div>
 
@@ -117,12 +119,16 @@ export default function ContactForm() {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="Your message"
+          placeholder="Your Message"
           rows="6"
-          className="p-3 rounded-lg border border-secondary/30 bg-white/30 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+          required
+          className="p-3 rounded-lg border border-secondary/30 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
         />
 
-        <button type="submit" className="btn-primary w-max mt-2 self-center sm:self-start">
+        <button
+          type="submit"
+          className="btn-primary w-max mt-2 self-center sm:self-start"
+        >
           Send Message
         </button>
       </form>

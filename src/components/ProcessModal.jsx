@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import FeedbackForm from "./FeedbackForm"; // Import the separate FeedbackForm
+import FeedbackForm from "./FeedbackForm"; // Your separate FeedbackForm
 
 export default function ProcessModal({ open, onClose }) {
   const [step, setStep] = useState(0);
@@ -13,15 +14,15 @@ export default function ProcessModal({ open, onClose }) {
   const progress = ((step + 1) / totalSteps) * 100;
 
   const slides = [
-    // STEP 0 — Context / Hook
+    // STEP 0
     {
       title: "Imagine This…",
       description:
-        "You’ve just finished reading an article on your favorite news app and decide it’s time to log out. But when you tap the logout button, things get confusing…",
+        "You finish reading an article on your favorite news app and tap ‘Log Out.’ But instead of logging out, things get confusing…",
       content: (
         <div className="w-full flex flex-col items-center mt-6">
-          <p className="text-center text-sm text-secondary opacity-80 leading-relaxed">
-            Let’s see how a logout experience can leave users puzzled and frustrated.
+          <p className="text-center text-md text-secondary opacity-80 leading-relaxed">
+            <strong>Let’s see how a logout experience can leave users puzzled and frustrated.</strong>
           </p>
         </div>
       ),
@@ -60,9 +61,9 @@ export default function ProcessModal({ open, onClose }) {
         "Breaking down the bad UX to understand why users feel uncertain and frustrated.",
       content: (
         <div className="flex flex-col gap-4 mt-6 text-sm text-secondary leading-relaxed">
-          <p>• The ‘OK’ button is vague — users don’t know the consequence of clicking it.</p>
-          <p>• Extra messaging (ads) distracts from the primary task: logging out.</p>
-          <p>• Text like “cannot be undone… probably” creates anxiety and mistrust.</p>
+          <p>• The <strong>‘OK’</strong> button is vague — users don’t know the consequence of clicking it.</p>
+          <p>• <strong>Extra</strong> messaging (ads) distracts from the primary task: logging out.</p>
+          <p>• Text like <strong> “cannot be undone… </strong> probably” creates anxiety and mistrust.</p>
         </div>
       ),
     },
@@ -129,20 +130,21 @@ export default function ProcessModal({ open, onClose }) {
     },
   ];
 
-  // --- HANDLE CLOSE: reset step to 0 before closing ---
+  // --- HANDLE CLOSE ---
   const handleClose = () => {
     setStep(0);
     onClose();
   };
 
-  return (
+  // ✅ Render using portal to document.body
+  return createPortal(
     <AnimatePresence>
       {open && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex justify-center items-center px-4"
+          className="fixed inset-0 z-[1000] bg-black/60 backdrop-blur-sm flex justify-center items-center px-4"
         >
           <motion.div
             initial={{ y: 40, opacity: 0 }}
@@ -204,6 +206,7 @@ export default function ProcessModal({ open, onClose }) {
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }

@@ -14,13 +14,14 @@ const ContactCTA = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent"
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent 
+                    leading-snug sm:leading-normal md:leading-relaxed pb-1"
           style={{
-            backgroundImage: "linear-gradient(45deg, var(--color-secondary), #f0f0f0, var(--color-secondary))",
-            backgroundSize: "400% 400%",
-            fontFamily: "var(--font-heading)",
-            animation: "gradientMove 20s ease infinite",
-            WebkitTextStroke: "1px var(--color-white)", // subtle stroke
+          backgroundImage: "linear-gradient(45deg, var(--color-secondary), #f0f0f0, var(--color-secondary))",
+          backgroundSize: "400% 400%",
+          fontFamily: "var(--font-heading)",
+          animation: "gradientMove 20s ease infinite",
+          WebkitTextStroke: "1px var(--color-white)", // subtle stroke
           }}
         >
           Let’s create something amazing together

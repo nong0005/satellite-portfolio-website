@@ -1,11 +1,13 @@
 import React from "react";
 import AnimatedGradient from "./AnimatedGradient";
+import { Download } from "lucide-react";
 
 const AboutDetails = () => {
   return (
     <div className="max-w-[1250px] mx-auto w-full px-4 md:px-8 py-12 space-y-12">
       <AnimatedGradient>
         <section className="w-full space-y-12">
+
           {/* Education Section */}
           <div className="space-y-3">
             <h2 className="text-2xl md:text-3xl font-semibold text-[var(--color-secondary)]">Education</h2>
@@ -24,6 +26,30 @@ const AboutDetails = () => {
             </ul>
           </div>
 
+          {/* Featured Writing Section (NEW) */}
+          <div className="space-y-3">
+            <h2 className="text-2xl md:text-3xl font-semibold text-[var(--color-secondary)]">
+              Featured Writing
+            </h2>
+            <p className="text-[var(--color-secondary)] leading-relaxed">
+              I authored an inspirational story about my father, published in a local
+              newspaper. The article reflects his resilience, compassion, and the values that
+              shaped who I am today.
+            </p>
+            <a
+              href="https://www.imphaltimes.com/guest-column/why-is-he-my-hero/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary px-8 py-3 text-lg font-semibold"
+            >
+              Read Article
+            </a>
+            <p className="text-[var(--color-secondary)] text-sm">
+              Opens in a new tab · News article webpage.
+            </p>
+
+          </div>
+
           {/* Work Experience Section */}
           <div className="space-y-3">
             <h2 className="text-2xl md:text-3xl font-semibold text-[var(--color-secondary)]">Work Experience</h2>
@@ -38,6 +64,30 @@ const AboutDetails = () => {
               <li>Contributed to strategic storytelling efforts by designing cohesive multimedia narratives across platforms.</li>
             </ul>
           </div>
+
+          {/* Resume Section (NEW) */}
+          <div className="space-y-3">
+            <h2 className="text-2xl md:text-3xl font-semibold text-[var(--color-secondary)]">
+              Resume
+            </h2>
+            <p className="text-[var(--color-secondary)] leading-relaxed">
+              Want a deeper look into my professional background, skills, and experience?
+              You can view or download my resume anytime.
+            </p>
+            <a
+              href="/resume/Satellite_Resume.pdf"
+              target="_blank"
+              className="btn-primary px-8 py-3 text-lg font-semibold mt-6"
+            >
+              View Resume (PDF)
+            </a>
+
+            <p className="text-[var(--color-secondary)] text-sm">
+              Opens in a new tab · PDF format
+            </p>
+          </div>
+
+
         </section>
       </AnimatedGradient>
     </div>

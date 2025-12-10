@@ -278,3 +278,8 @@
     margin: 0 auto;
   }
 }
+
+.motion-smooth {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}

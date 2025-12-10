@@ -27,8 +27,13 @@ const UXDesignPage = () => {
 
         {/* Page Title */}
         <h1 className="text-5xl font-bold mb-12 text-center font-heading text-secondary">
-          UX Design <sup className="text-2xl align-super">2</sup>
+          UX Design <sup className="text-2xl w-8 h-8 inline-flex flex-shrink-0 items-center justify-center rounded-full bg-primary text-secondary">2</sup>
         </h1>
+
+        {/* ---------- PAGE DESCRIPTION ---------- */}
+<p className="text-center text-secondary-300 max-w-2xl mx-auto mb-12 text-lg sm:text-xl">
+  A showcase of my UX design projects, highlighting user-centered workflows, interface improvements, and design thinking applied to real-world digital products.
+</p>
 
         {/* CARD GRID */}
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">

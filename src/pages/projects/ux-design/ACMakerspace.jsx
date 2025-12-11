@@ -11,7 +11,7 @@ const sectionFade = {
 
 export default function ACMakerspacePage() {
   return (
-    <div className="mx-auto px-4 py-12 max-w-[1200px] font-body text-gray-800 space-y-12">
+    <div className="mx-auto  px-4 py-12 max-w-[1200px] font-body text-gray-800 space-y-12">
 
       {/* HERO */}
       <motion.header
@@ -26,13 +26,12 @@ export default function ACMakerspacePage() {
           alt="AC Makerspace Hero"
           className="w-full h-64 md:h-[420px] object-cover"
         />
-        <div className="absolute inset-0 bg-black/60 flex flex-col justify-center items-start gap-3 p-6 md:p-12">
+        <div className="absolute inset-0 bg-black/60 flex flex-col justify-center items-start gap-3 p-6  md:p-12">
           <h1 className="text-3xl md:text-4xl font-bold text-white px-3 py-1 rounded">
             Algonquin College — MakerSpace Project
           </h1>
           <p className="text-sm md:text-base text-white px-3 py-1 rounded max-w-2xl">
-            Lead UX Designer: Satellite Nongmaithem | Responsible for user research, information architecture, and designing user flows. Conducted wireframing, usability testing, and iterative improvements, leading to an effective, user-centered training system implementation.
-          </p>
+          Lead UX Designer – Satellite Nongmaithem: Led UX research, IA, user flows, wireframes, and usability testing to deliver an effective user-centered training system.          </p>
         </div>
       </motion.header>
 

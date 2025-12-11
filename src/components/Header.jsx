@@ -59,7 +59,7 @@ const Header = () => {
   const isSubMenuActive = (path) => location.pathname === path;
 
   return (
-    <header className="sticky top-16 md:top-6 z-50"> {/* Increased top margin for mobile */}
+    <header className="sticky top-6  md:top-6 z-50"> {/* Increased top margin for mobile */}
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 relative z-20">
         <div className="bg-white/20 backdrop-blur-md border border-white/30 shadow-md rounded-xl flex justify-between items-center py-4 px-6 relative z-20">
           

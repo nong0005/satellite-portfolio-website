@@ -4,5 +4,5 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: './', // ensures relative paths work after deployment
+  base: '/', // ensures relative paths work after deployment
 })

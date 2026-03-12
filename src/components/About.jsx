@@ -52,9 +52,13 @@ export default function AboutMe() {
               “Design is where creativity meets purpose — a bridge between imagination and impact.”
             </h2>
             <div className="space-y-4 text-[var(--color-secondary)] text-base md:text-lg leading-relaxed">
-              <p>From childhood sketches to award-winning paintings, creativity has always been my language...</p>
-              <p>Studying Interactive Media Design at Algonquin College and completing the Google UX Design Certificate deepened my approach...</p>
-            </div>
+            <p>
+              From childhood sketches to award-winning paintings, creativity has always been a big part of who I am. Over time, that passion grew into an interest in digital design, where I could turn ideas into experiences that are both meaningful and functional.
+            </p>
+            <p>
+              Studying Interactive Media Design at Algonquin College and completing the Google UX Design Certificate helped me shape that creativity into a more thoughtful process. Today, I enjoy combining design, storytelling, and technology to create user-centered experiences that are visually engaging and purposeful.
+            </p>
+        </div>
           </motion.div>
         </motion.div>
 

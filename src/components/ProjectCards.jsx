@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { ShoppingBag } from "lucide-react";
 import "../styles/featured-projects.css";
 import AnimatedGradient from "./AnimatedGradient";
 
-// Example project data
 const projects = [
   { title: "Algonquin College Makerspace Project", category: "UX Design" },
-  { title: "Tailgators Website Redesign", category: "UX Design" },
+  { title: "SN Creative Solutions E-commerce Website", category: "UX Design" },
   { title: "SOES School management app", category: "Web Development" },
   { title: "AC-handbook", category: "Digital Graphics" },
   { title: "AC-flow-chart", category: "Digital Graphics" },
@@ -19,7 +19,6 @@ const projects = [
   { title: "Video-project-2", category: "Photo & Videography" }
 ];
 
-// Category page links
 const categories = [
   { title: "UX Design", link: "/projects/ux-design" },
   { title: "Web Development", link: "/projects/web-development" },
@@ -27,31 +26,39 @@ const categories = [
   { title: "Photo & Videography", link: "/projects/photo-video" }
 ];
 
-// Featured Projects
 const featuredProjects = [
   {
-    title: "Tailgators Website Redesign",
+    title: "SN Creative Solutions E-commerce Website",
     tag: "UX Design",
-    image: "/images/project-banners/tailgators-banner-resized.jpeg",
-    link: "/projects/ux-design/tailgators"
+    image: "/images/project-banners/shopify-mockup.png",
+    link: "https://sncreativesolutions.myshopify.com/",
+    cta: "Visit Website",
+    external: true,
+    icon: <ShoppingBag size={18} />
   },
   {
     title: "Algonquin Makerspace Project",
     tag: "UX Design",
     image: "/images/project-banners/ac-makerspace-banner-resized.jpeg",
-    link: "/projects/ux-design/ac-makerspace"
+    link: "/projects/ux-design/ac-makerspace",
+    cta: "View Case Study",
+    external: false
   },
   {
     title: "Photo & Video Stories",
     tag: "Photo & Videography",
     image: "/images/project-banners/photo-video-banner-resized.jpeg",
-    link: "/projects/photo-video"
+    link: "/projects/photo-video",
+    cta: "View Project",
+    external: false
   },
   {
     title: "Digital Graphics Showcase",
     tag: "Digital Graphics",
     image: "/images/project-banners/digital-design-banner-resized.jpeg",
-    link: "/projects/digital-design"
+    link: "/projects/digital-design",
+    cta: "View Project",
+    external: false
   }
 ];
 
@@ -64,12 +71,10 @@ const ProjectCategoryCards = ({ showViewAll = true }) => {
   return (
     <section className="py-20 text-secondary" id="projects">
       <div className="max-w-7xl mx-auto px-6">
-
         <h2 className="text-4xl font-bold mb-12 text-center font-heading text-secondary">
           Project Categories
         </h2>
 
-        {/* Category Cards */}
         <div className="flex flex-wrap sm:flex-nowrap gap-8 items-center justify-center mt-6 w-full">
           {categories.map((cat, index) => (
             <motion.div
@@ -93,7 +98,6 @@ const ProjectCategoryCards = ({ showViewAll = true }) => {
           ))}
         </div>
 
-        {/* Featured Projects */}
         <div className="mt-20">
           <h3 className="text-4xl font-bold mb-12 text-center font-heading text-secondary">
             Featured Projects
@@ -108,7 +112,6 @@ const ProjectCategoryCards = ({ showViewAll = true }) => {
                 className="rounded-xl overflow-hidden shadow-lg bg-[var(--color-accent-light)] cursor-pointer 
                            border border-white hover:border-black hover:shadow-2xl transition-all flex flex-col"
               >
-                {/* Banner Image */}
                 <div className="w-full overflow-hidden">
                   <img
                     src={proj.image}
@@ -117,33 +120,39 @@ const ProjectCategoryCards = ({ showViewAll = true }) => {
                   />
                 </div>
 
-                {/* Content */}
                 <div className="p-6 flex flex-col gap-3">
-                  <span className="text-sm font-semibold text-secondary">
-                    {proj.tag}
-                  </span>
+                  <div className="flex items-center gap-2 text-sm font-semibold text-secondary">
+                    {proj.icon && <span>{proj.icon}</span>}
+                    <span>{proj.tag}</span>
+                  </div>
+
                   <h4 className="text-2xl font-semibold text-secondary">
                     {proj.title}
                   </h4>
 
-                  {/* CONDITIONAL CTA BUTTON */}
-                  <Link
-                    to={proj.link}
-                    className="btn-primary mt-4 w-fit"
-                  >
-                    {proj.title.includes("Tailgators") ||
-                    proj.title.includes("Makerspace")
-                      ? "View Case Study"
-                      : "View Project"}
-                  </Link>
-
+                  {proj.external ? (
+                    <a
+                      href={proj.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary mt-4 w-fit"
+                    >
+                      {proj.cta}
+                    </a>
+                  ) : (
+                    <Link
+                      to={proj.link}
+                      className="btn-primary mt-4 w-fit"
+                    >
+                      {proj.cta}
+                    </Link>
+                  )}
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Bottom View All Projects */}
         {showViewAll && (
           <div className="flex justify-center mt-12">
             <Link

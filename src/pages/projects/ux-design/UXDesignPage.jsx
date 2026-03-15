@@ -108,7 +108,7 @@ const UXDesignPage = () => {
                         e.stopPropagation();
                         handleCopyPassword(project.password);
                       }}
-                      className="group inline-flex w-fit items-center gap-2 rounded-md border border-black px-3 py-2 text-sm font-medium text-secondary transition-all duration-300 hover:bg-black hover:text-white"
+                      className="group inline-flex w-fit items-center gap-2 rounded-md border border-black px-3 py-2 text-sm font-medium  transition-all duration-300 hover:bg-black hover:text-white"
                     >
                       <Copy
                         size={16}

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ShoppingBag } from "lucide-react";
+import { ShoppingBag, Copy } from "lucide-react";
 import "../styles/featured-projects.css";
 import AnimatedGradient from "./AnimatedGradient";
 
@@ -32,9 +32,10 @@ const featuredProjects = [
     tag: "UX Design",
     image: "/images/project-banners/shopify-mockup.png",
     link: "https://sncreativesolutions.myshopify.com/",
-    cta: "Visit Website",
+    cta: "View Live Store",
     external: true,
-    icon: <ShoppingBag size={18} />
+    icon: <ShoppingBag size={18} />,
+    password: "Store@123"
   },
   {
     title: "Algonquin Makerspace Project",
@@ -67,6 +68,16 @@ const ProjectCategoryCards = ({ showViewAll = true }) => {
     acc[cat.title] = projects.filter((p) => p.category === cat.title).length;
     return acc;
   }, {});
+
+  const handleCopyPassword = async (password) => {
+    try {
+      await navigator.clipboard.writeText(password);
+      alert("Store password copied.");
+    } catch (error) {
+      console.error("Failed to copy password:", error);
+      alert("Could not copy password.");
+    }
+  };
 
   return (
     <section className="py-20 text-secondary" id="projects">
@@ -109,8 +120,7 @@ const ProjectCategoryCards = ({ showViewAll = true }) => {
                 key={index}
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.2 }}
-                className="rounded-xl overflow-hidden shadow-lg bg-[var(--color-accent-light)] cursor-pointer 
-                           border border-white hover:border-black hover:shadow-2xl transition-all flex flex-col"
+                className="rounded-xl overflow-hidden shadow-lg bg-[var(--color-accent-light)] cursor-pointer border border-white hover:border-black hover:shadow-2xl transition-all flex flex-col"
               >
                 <div className="w-full overflow-hidden">
                   <img
@@ -131,19 +141,36 @@ const ProjectCategoryCards = ({ showViewAll = true }) => {
                   </h4>
 
                   {proj.external ? (
-                    <a
-                      href={proj.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary mt-4 w-fit"
-                    >
-                      {proj.cta}
-                    </a>
+                    <>
+                      <a
+                        href={proj.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary mt-4 w-fit"
+                      >
+                        {proj.cta}
+                      </a>
+
+                      {proj.password && (
+                        <div className="mt-3 flex flex-col gap-2 rounded-lg border border-black/10 bg-white/70 p-3">
+                          <p className="text-sm text-secondary">
+                            <span className="font-semibold">Store password:</span>{" "}
+                            <span className="font-mono">{proj.password}</span>
+                          </p>
+
+                          <button
+                            type="button"
+                            onClick={() => handleCopyPassword(proj.password)}
+                            className="inline-flex w-fit items-center gap-2 rounded-md border border-black px-3 py-2 text-sm font-medium  transition hover:bg-black hover:text-white"
+                          >
+                            <Copy size={16} />
+                            Copy Password
+                          </button>
+                        </div>
+                      )}
+                    </>
                   ) : (
-                    <Link
-                      to={proj.link}
-                      className="btn-primary mt-4 w-fit"
-                    >
+                    <Link to={proj.link} className="btn-primary mt-4 w-fit">
                       {proj.cta}
                     </Link>
                   )}
